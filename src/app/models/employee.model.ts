@@ -1,3 +1,5 @@
+import {QualificationModel} from "./qualificationModel";
+
 export interface EmployeeModel {
   id?: number,
   lastName?: string,
@@ -6,4 +8,5 @@ export interface EmployeeModel {
   postcode?: string,
   city?: string,
   phone?: string
+  skillSet?: QualificationModel[]
 }

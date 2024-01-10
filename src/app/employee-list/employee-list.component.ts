@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Observable, of} from "rxjs";
 import {EmployeeService} from "../services/employee.service";
 import {EmployeeModel} from "../models/employee.model";
 
@@ -10,15 +9,17 @@ import {EmployeeModel} from "../models/employee.model";
 })
 export class EmployeeListComponent {
 
-  employees$: Observable<EmployeeModel[]>;
+  employees$!: EmployeeModel[];
 
   constructor(private employeeService: EmployeeService) {
-    this.employees$ = of([]);
+
     this.fetchEmployees();
   }
 
   fetchEmployees() {
-    this.employees$ = this.employeeService.fetchAllEmployees();
+    this.employeeService.fetchAllEmployees().subscribe(employees => {
+      this.employees$ = employees;
+    });
   }
 
 }

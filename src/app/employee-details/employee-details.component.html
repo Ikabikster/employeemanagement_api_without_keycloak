@@ -1,1 +1,15 @@
-<p>employee-details works!</p>
+<button>Back</button>
+<div>
+  <p>{{ employee$.firstName + " " + employee$.lastName }}</p>
+  <p>{{ employee$.street }}</p>
+  <p>{{ employee$.postcode + " " + employee$.city }}</p>
+  <br>
+  <p>{{ employee$.phone }}</p>
+  <div>
+    Qualifikationen:
+    <ul>
+      <li *ngFor="let qualification of employee$.skillSet">{{ qualification.skill }}</li>
+    </ul>
+  </div>
+</div>
+<button>Edit</button>
