@@ -1,11 +1,11 @@
-<button>Back</button>
+<button routerLink="/employee">Back</button>
 <div>
   <p>{{ employee$.firstName + " " + employee$.lastName }}</p>
   <p>{{ employee$.street }}</p>
   <p>{{ employee$.postcode + " " + employee$.city }}</p>
   <br>
   <p>{{ employee$.phone }}</p>
-  <div>
+  <div *ngIf="employee$.skillSet?.length">
     Qualifikationen:
     <ul>
       <li *ngFor="let qualification of employee$.skillSet">{{ qualification.skill }}</li>

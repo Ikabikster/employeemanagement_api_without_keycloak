@@ -24,4 +24,12 @@ export class EmployeeService {
         .set('Content-Type', 'application/json')
     })
   }
+
+  addNewEmployee(employee: EmployeeModel): Observable<EmployeeModel> {
+    return this.http.post<EmployeeModel>('/backend',
+      employee,{
+        headers: new HttpHeaders()
+          .set('Content-Type', 'application/json')
+      })
+  }
 }

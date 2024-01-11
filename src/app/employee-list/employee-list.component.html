@@ -1,7 +1,7 @@
 <table>
   <tr>
     <h4>Willkommen</h4>
-    <button>button for add of employee</button>
+    <button routerLink="/employee/add">button for add of employee</button>
   </tr>
   <tr>
     <th>ID</th>
@@ -12,7 +12,7 @@
     <td>{{employee.id}}</td>
     <td>{{employee.firstName + " " + employee.lastName}}</td>
     <td>
-      <button>Details</button>
+      <button routerLink="/employee/{{employee.id}}">Details</button>
       <button>Edit</button>
       <button>Delete</button>
     </td>
