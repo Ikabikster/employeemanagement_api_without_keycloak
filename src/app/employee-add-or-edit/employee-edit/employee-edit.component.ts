@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EmployeeService} from "../../services/employee.service";
-import {EmployeeModel} from "../../models/employee.model";
 import {ActivatedRoute} from "@angular/router";
 import {QualificationModel} from "../../models/qualificationModel";
+import {EmployeeRequestModel} from "../../models/employeeRequest.model";
 
 @Component({
   selector: 'app-employee-edit',
@@ -33,14 +33,15 @@ export class EmployeeEditComponent {
   }
 
   submitForm() {
-    const employeeToUpdate: EmployeeModel = this.employeeForm.value;
+    const employeeToUpdate: EmployeeRequestModel = this.employeeForm.value;
     if (this.employeeForm.get("skillSet")?.value) {
-      const qualifications : QualificationModel[] = this.employeeForm.get("skillSet")?.value ;
+      const qualifications: QualificationModel[] = this.employeeForm.get("skillSet")?.value;
+      employeeToUpdate.skillSet = [];
       qualifications.forEach(qualification => {
-        employeeToUpdate.requestSkillSet?.push(qualification.id!)
+        employeeToUpdate.skillSet?.push(qualification.id!)
       });
     }
-    const idToUpdate: number = this.route.snapshot.params["id"];
-    this.employeeService.updateEmployee(idToUpdate, employeeToUpdate).subscribe();
+    employeeToUpdate.id = this.route.snapshot.params["id"];
+    this.employeeService.updateEmployee(employeeToUpdate).subscribe();
   }
 }

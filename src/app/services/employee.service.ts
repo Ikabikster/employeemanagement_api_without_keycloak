@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {EmployeeModel} from "../models/employee.model";
+import {EmployeeResponseModel} from "../models/employeeResponse.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {EmployeeRequestModel} from "../models/employeeRequest.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,30 +12,30 @@ export class EmployeeService {
   constructor(private http: HttpClient) {
   }
 
-  fetchAllEmployees(): Observable<EmployeeModel[]> {
-    return this.http.get<EmployeeModel[]>('/backend', {
+  fetchAllEmployees(): Observable<EmployeeResponseModel[]> {
+    return this.http.get<EmployeeResponseModel[]>('/backend', {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')
     })
   }
 
-  fetchSingleEmplyeeWithId(id: number): Observable<EmployeeModel> {
-    return this.http.get<EmployeeModel>(`/backend/${id}`, {
+  fetchSingleEmplyeeWithId(id: number): Observable<EmployeeResponseModel> {
+    return this.http.get<EmployeeResponseModel>(`/backend/${id}`, {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')
     })
   }
 
-  addNewEmployee(employee: EmployeeModel): Observable<EmployeeModel> {
-    return this.http.post<EmployeeModel>('/backend',
+  addNewEmployee(employee: EmployeeRequestModel): Observable<EmployeeResponseModel> {
+    return this.http.post<EmployeeResponseModel>('/backend',
       employee, {
         headers: new HttpHeaders()
           .set('Content-Type', 'application/json')
       })
   }
 
-  updateEmployee(id: number, employee: EmployeeModel): Observable<EmployeeModel> {
-    return this.http.put<EmployeeModel>(`/backend/${id}`,
+  updateEmployee(employee: EmployeeRequestModel): Observable<EmployeeResponseModel> {
+    return this.http.put<EmployeeResponseModel>(`/backend/${employee.id}`,
       employee, {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {EmployeeModel} from "../models/employee.model";
+import {EmployeeResponseModel} from "../models/employeeResponse.model";
 import {EmployeeService} from "../services/employee.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -9,7 +9,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent {
-  employee$!: EmployeeModel;
+  employee$!: EmployeeResponseModel;
+
 
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {
     const id: number = route.snapshot.params['id'];

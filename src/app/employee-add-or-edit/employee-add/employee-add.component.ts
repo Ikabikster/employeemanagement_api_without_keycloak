@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {EmployeeModel} from "../../models/employee.model";
 import {EmployeeService} from "../../services/employee.service";
+import {EmployeeRequestModel} from "../../models/employeeRequest.model";
 
 @Component({
   selector: 'app-employee-add',
@@ -23,7 +23,7 @@ export class EmployeeAddComponent {
   }
 
   submitForm() {
-    const newEmployee: EmployeeModel = this.employeeForm.value;
+    const newEmployee: EmployeeRequestModel = this.employeeForm.value;
     this.employeeService.addNewEmployee(newEmployee).subscribe();
   }
 }

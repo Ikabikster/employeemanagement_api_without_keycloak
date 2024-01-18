@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {EmployeeService} from "../services/employee.service";
-import {EmployeeModel} from "../models/employee.model";
+import {EmployeeResponseModel} from "../models/employeeResponse.model";
 
 @Component({
   selector: 'app-employee-list',
@@ -9,7 +9,7 @@ import {EmployeeModel} from "../models/employee.model";
 })
 export class EmployeeListComponent {
 
-  employees$!: EmployeeModel[];
+  employees$!: EmployeeResponseModel[];
 
   constructor(private employeeService: EmployeeService) {
 

@@ -1,6 +1,6 @@
 import {QualificationModel} from "./qualificationModel";
 
-export interface EmployeeModel {
+export interface EmployeeResponseModel {
   id?: number,
   lastName?: string,
   firstName?: string,
@@ -8,6 +8,5 @@ export interface EmployeeModel {
   postcode?: string,
   city?: string,
   phone?: string,
-  requestSkillSet?: number[],
-  responseSkillSet?: QualificationModel[]
+  skillSet?: QualificationModel[]
 }
