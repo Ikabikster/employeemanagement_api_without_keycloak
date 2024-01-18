@@ -1,27 +1,19 @@
-import {Component} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {EmployeeService} from "../../services/employee.service";
+import {Component, Injector} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {QualificationModel} from "../../models/qualificationModel";
 import {EmployeeRequestModel} from "../../models/employeeRequest.model";
+import {EmployeeAddOrEditComponent} from "../employee-add-or-edit.component";
 
 @Component({
   selector: 'app-employee-edit',
-  templateUrl: './employee-edit.component.html',
-  styleUrls: ['./employee-edit.component.scss']
+  templateUrl: '../employee-add-or-edit.component.html',
+  styleUrls: ['../employee-add-or-edit.component.scss']
 })
-export class EmployeeEditComponent {
-  employeeForm: FormGroup = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    street: new FormControl(''),
-    postcode: new FormControl('', [Validators.minLength(5), Validators.maxLength(5)]),
-    city: new FormControl(''),
-    phone: new FormControl(''),
-    skillSet: new FormControl([])
-  })
+export class EmployeeEditComponent extends EmployeeAddOrEditComponent {
 
-  constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {
+
+  constructor(private newInjector: Injector, private route: ActivatedRoute) {
+    super(newInjector);
     this.getEmployeeToEdit();
   }
 
@@ -34,6 +26,7 @@ export class EmployeeEditComponent {
 
   submitForm() {
     const employeeToUpdate: EmployeeRequestModel = this.employeeForm.value;
+
     if (this.employeeForm.get("skillSet")?.value) {
       const qualifications: QualificationModel[] = this.employeeForm.get("skillSet")?.value;
       employeeToUpdate.skillSet = [];
@@ -41,6 +34,7 @@ export class EmployeeEditComponent {
         employeeToUpdate.skillSet?.push(qualification.id!)
       });
     }
+
     employeeToUpdate.id = this.route.snapshot.params["id"];
     this.employeeService.updateEmployee(employeeToUpdate).subscribe();
   }
