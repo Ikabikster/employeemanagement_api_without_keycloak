@@ -9,6 +9,7 @@ import {EmployeeDetailsComponent} from './employee-details/employee-details.comp
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { EmployeeAddComponent } from './employee-add-or-edit/employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-add-or-edit/employee-edit/employee-edit.component';
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmployeeEditComponent } from './employee-add-or-edit/employee-edit/empl
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
