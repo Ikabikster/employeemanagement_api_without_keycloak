@@ -6,7 +6,7 @@ import {EmployeeRequestModel} from "../../models/employeeRequest.model";
 @Component({
   selector: 'app-employee-add',
   templateUrl: './employee-add.component.html',
-  styleUrls: ['./employee-add.component.css']
+  styleUrls: ['./employee-add.component.scss']
 })
 export class EmployeeAddComponent {
   employeeForm: FormGroup = new FormGroup({

@@ -5,7 +5,7 @@ import {EmployeeResponseModel} from "../models/employeeResponse.model";
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent {
 

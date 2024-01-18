@@ -8,7 +8,7 @@ import {EmployeeRequestModel} from "../../models/employeeRequest.model";
 @Component({
   selector: 'app-employee-edit',
   templateUrl: './employee-edit.component.html',
-  styleUrls: ['./employee-edit.component.css']
+  styleUrls: ['./employee-edit.component.scss']
 })
 export class EmployeeEditComponent {
   employeeForm: FormGroup = new FormGroup({
