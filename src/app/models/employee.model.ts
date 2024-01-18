@@ -8,5 +8,5 @@ export interface EmployeeModel {
   postcode?: string,
   city?: string,
   phone?: string
-  skillSet?: QualificationModel[]
+  skillSet?: QualificationModel[] | number[]
 }

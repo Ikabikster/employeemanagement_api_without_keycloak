@@ -27,9 +27,17 @@ export class EmployeeService {
 
   addNewEmployee(employee: EmployeeModel): Observable<EmployeeModel> {
     return this.http.post<EmployeeModel>('/backend',
-      employee,{
+      employee, {
         headers: new HttpHeaders()
           .set('Content-Type', 'application/json')
       })
+  }
+
+  updateEmployee(id: number, employee: EmployeeModel): Observable<EmployeeModel> {
+    return this.http.put<EmployeeModel>(`/backend/${id}`,
+      employee, {
+      headers: new HttpHeaders()
+        .set('Content-Type', 'application/json')
+    })
   }
 }
