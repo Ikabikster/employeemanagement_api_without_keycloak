@@ -37,7 +37,7 @@ export class EmployeeEditComponent {
     if (this.employeeForm.get("skillSet")?.value) {
       const qualifications : QualificationModel[] = this.employeeForm.get("skillSet")?.value ;
       qualifications.forEach(qualification => {
-        employeeToUpdate.skillSet?.push(qualification.id!)
+        employeeToUpdate.requestSkillSet?.push(qualification.id!)
       });
     }
     const idToUpdate: number = this.route.snapshot.params["id"];

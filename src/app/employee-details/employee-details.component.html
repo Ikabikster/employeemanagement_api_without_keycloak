@@ -5,10 +5,10 @@
   <p>{{ employee$.postcode + " " + employee$.city }}</p>
   <br>
   <p>{{ employee$.phone }}</p>
-  <div *ngIf="employee$.skillSet?.length">
+  <div *ngIf="employee$.responseSkillSet?.length">
     Qualifikationen:
     <ul>
-      <li *ngFor="let qualification of employee$.skillSet">{{ qualification.skill }}</li>
+      <li *ngFor="let qualification of employee$.responseSkillSet">{{ qualification.skill}}</li>
     </ul>
   </div>
 </div>

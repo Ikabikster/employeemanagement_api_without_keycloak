@@ -7,6 +7,7 @@ export interface EmployeeModel {
   street?: string,
   postcode?: string,
   city?: string,
-  phone?: string
-  skillSet?: QualificationModel[] | number[]
+  phone?: string,
+  requestSkillSet?: number[],
+  responseSkillSet?: QualificationModel[]
 }
