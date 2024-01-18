@@ -16,7 +16,8 @@
     <td>
       <p-button icon="pi pi-bars" routerLink="/employee/{{employee.id}}"/>
       <p-button icon="pi pi-pencil" routerLink="/employee/edit/{{employee.id}}"/>
-      <p-button icon="pi pi-trash"/>
+      <p-button icon="pi pi-trash" (click)="deleteDialog(employee)"/>
     </td>
   </tr>
 </table>
+<p-confirmDialog></p-confirmDialog>

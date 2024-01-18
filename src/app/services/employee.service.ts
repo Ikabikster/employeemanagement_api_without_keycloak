@@ -41,4 +41,11 @@ export class EmployeeService {
         .set('Content-Type', 'application/json')
     })
   }
+
+  deleteEmployee(id: number) {
+    return this.http.delete(`/backend/${id}`,{
+      headers: new HttpHeaders()
+        .set('Content-Type','application/json')
+    })
+  }
 }

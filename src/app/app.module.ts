@@ -7,9 +7,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {EmployeeListComponent} from './employee-list/employee-list.component';
 import {EmployeeDetailsComponent} from './employee-details/employee-details.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { EmployeeAddComponent } from './employee-add-or-edit/employee-add/employee-add.component';
-import { EmployeeEditComponent } from './employee-add-or-edit/employee-edit/employee-edit.component';
+import {EmployeeAddComponent} from './employee-add-or-edit/employee-add/employee-add.component';
+import {EmployeeEditComponent} from './employee-add-or-edit/employee-edit/employee-edit.component';
 import {ButtonModule} from "primeng/button";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {ConfirmationService} from "primeng/api";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -21,13 +24,15 @@ import {ButtonModule} from "primeng/button";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    ConfirmDialogModule
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
