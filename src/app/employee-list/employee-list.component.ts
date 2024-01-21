@@ -27,9 +27,11 @@ export class EmployeeListComponent {
   deleteDialog(employee: EmployeeResponseModel) {
     this.confirmationService.confirm({
       message: "Möchten Sie den Eintrag wirklich löschen?",
-      header: employee.id + " " + employee.firstName + " " + employee.lastName,
-      acceptLabel: "Ja",
-      accept: () => {
+      header: employee.firstName + " " + employee.lastName,
+      rejectLabel: "Ja",
+      rejectButtonStyleClass: "p-button-info p-button-outlined",
+      rejectIcon: "pi pi-check",
+      reject: () => {
         this.employeeService.deleteEmployee(employee.id!).subscribe({
           next: () => {
             this.fetchEmployees();
@@ -41,7 +43,9 @@ export class EmployeeListComponent {
         })
         ;
       },
-      rejectLabel: "Nein"
+      acceptButtonStyleClass: "p-button-warning p-button-outlined",
+      acceptLabel: "Nein",
+      acceptIcon: "pi pi-times"
     })
   }
 

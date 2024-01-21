@@ -45,6 +45,7 @@
     fieldset {
       border: none;
       padding: 0 1em;
+
       &:not(:last-of-type) {
         margin: 0 0 1em;
       }
@@ -55,13 +56,35 @@
         transform: translate(-1em);
       }
 
-      p, ul{
-        margin-top:  0.4em;
-        margin-bottom:  0.4em;
+      p, ul {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+
         &:last-of-type {
           margin-bottom: 0.6em
         }
       }
     }
+  }
+}
+
+.employee-add-or-edit {
+  .p-panel .p-panel-content {
+    span, div {
+      margin: 0.8em 0 0.8em;
+
+      input {
+        width: 100%
+      }
+
+      &.employee-add-or-edit-input__city, &.employee-add-or-edit-input__name {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .p-panel .p-panel-footer {
+    display: flex;
+    justify-content: space-around;
   }
 }
