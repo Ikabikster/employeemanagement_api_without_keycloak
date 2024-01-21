@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {EmployeeService} from "../services/employee.service";
 import {EmployeeResponseModel} from "../models/employeeResponse.model";
 import {ConfirmationService} from "primeng/api";
+import {ToastService} from "../services/toast.service";
 
 @Component({
   selector: 'app-employee-list',
@@ -12,7 +13,7 @@ export class EmployeeListComponent {
 
   employees$!: EmployeeResponseModel[];
 
-  constructor(private employeeService: EmployeeService, private confirmationService: ConfirmationService) {
+  constructor(private employeeService: EmployeeService, private confirmationService: ConfirmationService, private toastService: ToastService) {
 
     this.fetchEmployees();
   }
@@ -29,9 +30,16 @@ export class EmployeeListComponent {
       header: employee.id + " " + employee.firstName + " " + employee.lastName,
       acceptLabel: "Ja",
       accept: () => {
-        this.employeeService.deleteEmployee(employee.id!).subscribe(() => {
-          this.fetchEmployees();
-        });
+        this.employeeService.deleteEmployee(employee.id!).subscribe({
+          next: () => {
+            this.fetchEmployees();
+            this.toastService.addSuccessMessageForAction("gelöscht")
+          },
+          error: (err) => {
+            this.toastService.addErrorMessageForAction("löschen", err.message)
+          },
+        })
+        ;
       },
       rejectLabel: "Nein"
     })

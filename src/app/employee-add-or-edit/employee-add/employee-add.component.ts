@@ -11,5 +11,6 @@ export class EmployeeAddComponent extends EmployeeAddOrEditComponent {
   constructor(newInjector: Injector) {
     super(newInjector);
     this.actionType = "hinzufügen";
+    this.doneActionType = "hinzugefügt";
   }
 }

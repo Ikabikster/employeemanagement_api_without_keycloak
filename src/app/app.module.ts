@@ -11,12 +11,13 @@ import {EmployeeAddComponent} from './employee-add-or-edit/employee-add/employee
 import {EmployeeEditComponent} from './employee-add-or-edit/employee-edit/employee-edit.component';
 import {ButtonModule} from "primeng/button";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
-import {ConfirmationService} from "primeng/api";
+import {ConfirmationService, MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PanelModule} from "primeng/panel";
 import {TableModule} from "primeng/table";
 import {CardModule} from "primeng/card";
 import {InputTextModule} from "primeng/inputtext";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import {InputTextModule} from "primeng/inputtext";
     PanelModule,
     TableModule,
     CardModule,
-    InputTextModule
+    InputTextModule,
+    ToastModule
   ],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

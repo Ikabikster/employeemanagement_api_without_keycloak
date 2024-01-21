@@ -15,6 +15,7 @@ export class EmployeeEditComponent extends EmployeeAddOrEditComponent {
     super(newInjector);
     this.getEmployeeToEdit();
     this.actionType = "bearbeiten";
+    this.doneActionType = "bearbeitet";
   }
 
   getEmployeeToEdit() {
@@ -36,6 +37,15 @@ export class EmployeeEditComponent extends EmployeeAddOrEditComponent {
     }
 
     employeeToUpdate.id = this.route.snapshot.params["id"];
-    this.employeeService.updateEmployee(employeeToUpdate).subscribe();
+    this.employeeService.updateEmployee(employeeToUpdate).subscribe({
+      next: () => {
+        this.router.navigate(["employee"])
+        this.toastService.addSuccessMessageForAction(this.doneActionType)
+
+      },
+      error: err => {
+        this.toastService.addErrorMessageForAction(this.actionType,err.message)
+      }
+    });
   }
 }
