@@ -3,7 +3,7 @@
     <p>Willkommen</p>
   </ng-template>
   <ng-template pTemplate="icons">
-    <p-button icon="pi pi-plus" routerLink="/employee/add"/>
+    <p-button icon="pi pi-plus" routerLink="/employee/add" [rounded]="true" [text]="true"/>
   </ng-template>
   <p-table class="employee-list__table" [value]="employees$">
     <ng-template pTemplate="header">

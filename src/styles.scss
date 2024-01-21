@@ -22,3 +22,44 @@
     }
   }
 }
+
+.employee-details {
+  .p-panel {
+
+    .p-panel-content {
+      padding: 2em
+    }
+
+    .p-panel-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .p-panel-header, .p-panel-footer {
+      padding: 0.7em;
+    }
+  }
+
+  .employee-details-content {
+
+    fieldset {
+      border: none;
+      padding: 0 1em;
+      margin: 0 0 1em;
+
+      legend {
+        font-weight: 150;
+        font-size: 0.9em;
+        transform: translate(-1em);
+      }
+
+      p, ul{
+        margin-top:  0.4em;
+        margin-bottom:  0.4em;
+        &:last-of-type {
+          margin-bottom: 0.6em
+        }
+      }
+    }
+  }
+}
