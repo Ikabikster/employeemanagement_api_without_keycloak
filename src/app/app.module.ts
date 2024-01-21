@@ -15,6 +15,8 @@ import {ConfirmationService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PanelModule} from "primeng/panel";
 import {TableModule} from "primeng/table";
+import {CardModule} from "primeng/card";
+import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {TableModule} from "primeng/table";
     ButtonModule,
     ConfirmDialogModule,
     PanelModule,
-    TableModule
+    TableModule,
+    CardModule,
+    InputTextModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

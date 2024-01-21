@@ -11,10 +11,10 @@ import {EmployeeAddOrEditComponent} from "../employee-add-or-edit.component";
 })
 export class EmployeeEditComponent extends EmployeeAddOrEditComponent {
 
-
-  constructor(private newInjector: Injector, private route: ActivatedRoute) {
+  constructor(newInjector: Injector, private route: ActivatedRoute) {
     super(newInjector);
     this.getEmployeeToEdit();
+    this.actionType = "bearbeiten";
   }
 
   getEmployeeToEdit() {

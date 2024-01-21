@@ -1,28 +1,34 @@
-<form [formGroup]="employeeForm">
-  <div>
+<p-panel [formGroup]="employeeForm" class="employee-app-body__center employee-add-or-edit">
+  <ng-template pTemplate="header">
+    Mitarbeiter {{ actionType }}
+  </ng-template>
+
+  <span class="p-float-label">
+    <input pInputText id="firstName" type="text" formControlName="firstName">
     <label for="firstName">Vorname</label>
-    <input id="firstName" type="text" formControlName="firstName">
-  </div>
-  <div>
+  </span>
+  <span class="p-float-label">
+    <input pInputText id="lastName" type="text" formControlName="lastName">
     <label for="lastName">Nachname</label>
-    <input id="lastName" type="text" formControlName="lastName">
-  </div>
-  <div>
+  </span>
+  <span class="p-float-label">
+    <input pInputText id="street" type="text" formControlName="street">
     <label for="street">Straße</label>
-    <input id="street" type="text" formControlName="street">
-  </div>
-  <div>
+  </span>
+  <span class="p-float-label">
+    <input pInputText id="postcode" type="text" formControlName="postcode">
     <label for="postcode">PLZ</label>
-    <input id="postcode" type="text" formControlName="postcode">
-  </div>
-  <div>
+  </span>
+  <span class="p-float-label">
+    <input pInputText id="city" type="text" formControlName="city">
     <label for="city">Ort</label>
-    <input id="city" type="text" formControlName="city">
-  </div>
-  <div>
+  </span>
+  <span class="p-float-label">
+    <input pInputText id="phone" type="text" formControlName="phone">
     <label for="phone">Telefonnummer</label>
-    <input id="phone" type="text" formControlName="phone">
-  </div>
-</form>
-<p-button label="Abbrechen" routerLink="/employee"/>
-<p-button label="Speichern" (click)="submitForm()"/>
+  </span>
+  <ng-template pTemplate="footer">
+    <p-button label="Abbrechen" routerLink="/employee"/>
+    <p-button label="Speichern" (click)="submitForm()"/>
+  </ng-template>
+</p-panel>

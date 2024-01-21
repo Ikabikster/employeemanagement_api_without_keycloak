@@ -8,7 +8,8 @@ import {EmployeeAddOrEditComponent} from "../employee-add-or-edit.component";
 })
 export class EmployeeAddComponent extends EmployeeAddOrEditComponent {
 
-  constructor(private newInjector: Injector) {
+  constructor(newInjector: Injector) {
     super(newInjector);
+    this.actionType = "hinzufügen";
   }
 }

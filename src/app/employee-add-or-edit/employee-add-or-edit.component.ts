@@ -1,13 +1,13 @@
-import {Component, Injector} from '@angular/core';
+import {Directive, Injector} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EmployeeRequestModel} from "../models/employeeRequest.model";
 import {EmployeeService} from "../services/employee.service";
 
-@Component({
+@Directive({
   selector: 'app-employee-add-or-edit',
-  template: ''
 })
 export abstract class EmployeeAddOrEditComponent {
+  protected actionType: string = "";
   protected employeeForm: FormGroup = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -19,7 +19,7 @@ export abstract class EmployeeAddOrEditComponent {
   })
   protected employeeService: EmployeeService;
 
-  constructor(private injector: Injector) {
+  protected constructor(injector: Injector) {
     this.employeeService = injector.get(EmployeeService);
   }
 
