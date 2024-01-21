@@ -1,1 +1,24 @@
 @import "primeicons/primeicons.css";
+
+.employee-app-body__center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.employee-list {
+  .p-panel .p-panel-header {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
+
+  .employee-list__table {
+    border: none;
+
+    td:last-of-type, th:last-of-type {
+      padding: 0;
+    }
+  }
+}
