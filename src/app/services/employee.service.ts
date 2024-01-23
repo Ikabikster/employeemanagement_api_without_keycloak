@@ -9,6 +9,7 @@ import {EmployeeRequestModel} from "../models/employeeRequest.model";
 })
 export class EmployeeService {
 
+  // ToDo: wofür ist der constructor?
   constructor(private http: HttpClient) {
   }
 
