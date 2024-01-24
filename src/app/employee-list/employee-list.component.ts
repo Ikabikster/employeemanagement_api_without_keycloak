@@ -14,10 +14,9 @@ export class EmployeeListComponent {
   employees$!: EmployeeResponseModel[];
 
   constructor(private employeeService: EmployeeService, private confirmationService: ConfirmationService, private toastService: ToastService) {
-
     this.fetchEmployees();
   }
-
+  
   fetchEmployees() {
     this.employeeService.fetchAllEmployees().subscribe(employees => {
       this.employees$ = employees;

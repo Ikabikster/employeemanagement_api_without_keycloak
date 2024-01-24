@@ -12,5 +12,4 @@ export class EmployeeAddComponent extends EmployeeAddOrEditComponent {
     this.actionType = "hinzufügen";
     this.doneActionType = "hinzugefügt";
   }
-
 }
