@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ConfirmationService} from "primeng/api";
 import {ToastService} from "../services/toast.service";
 
+
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
