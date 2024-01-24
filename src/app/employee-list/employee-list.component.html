@@ -1,7 +1,29 @@
-<h1>LF10-Starter</h1>
-Wenn Sie in der EmployeeListComponent.ts ein gültiges Bearer-Token eintragen, sollten hier die Namen der in der Datenbank gespeicherten Mitarbeiter angezeigt werden!
-<ul>
-  <li *ngFor="let e of employees$ | async">
-    {{e.lastName }}, {{e.firstName}}
-  </li>
-</ul>
+<p-panel class="employee-app-body__center employee-list">
+  <ng-template pTemplate="header">
+    <p>Willkommen</p>
+  </ng-template>
+  <ng-template pTemplate="icons">
+    <p-button icon="pi pi-plus" routerLink="/employee/add" />
+  </ng-template>
+  <p-table class="employee-list__table" [value]="employees$">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Mitarbeiter</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.firstName + " " + employee.lastName }}</td>
+        <td class="employee-list__table__item__buttons">
+          <p-button icon="pi pi-id-card" routerLink="/employee/{{employee.id}}" [rounded]="true" [text]="true"/>
+          <p-button icon="pi pi-pencil" routerLink="/employee/edit/{{employee.id}}" [rounded]="true" [text]="true" severity="warning"/>
+          <p-button icon="pi pi-trash" (click)="deleteDialog(employee)" [rounded]="true" [text]="true" severity="danger"/>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-panel>
+<p-confirmDialog [closable]="false"></p-confirmDialog>

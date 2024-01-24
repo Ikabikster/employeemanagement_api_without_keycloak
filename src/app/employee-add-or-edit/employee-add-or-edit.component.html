@@ -1,0 +1,38 @@
+<p-panel [formGroup]="employeeForm" class="employee-app-body__center employee-add-or-edit">
+  <ng-template pTemplate="header">
+    Mitarbeiter {{ actionType }}
+  </ng-template>
+  <div class="employee-add-or-edit-input__name">
+    <span class="p-float-label">
+      <input pInputText id="firstName" type="text" formControlName="firstName">
+      <label for="firstName">Vorname</label>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="lastName" type="text" formControlName="lastName">
+      <label for="lastName">Nachname</label>
+    </span>
+  </div>
+  <span class="p-float-label">
+    <input pInputText id="street" type="text" formControlName="street">
+    <label for="street">Straße</label>
+  </span>
+  <div class="employee-add-or-edit-input__city">
+    <span class="p-float-label">
+      <input pInputText id="postcode" type="text" formControlName="postcode">
+      <label for="postcode">PLZ</label>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="city" type="text" formControlName="city">
+      <label for="city">Ort</label>
+    </span>
+  </div>
+  <span class="p-float-label">
+    <input pInputText id="phone" type="text" formControlName="phone">
+    <label for="phone">Telefonnummer</label>
+  </span>
+  <ng-template pTemplate="footer">
+    <p-button label="Abbrechen"  routerLink="/employee" [outlined]="true" severity="warning"/>
+    <p-button label="Speichern" [disabled]="!employeeForm.valid" (click)="submitForm()" [outlined]="true" severity="info"/>
+  </ng-template>
+</p-panel>
+

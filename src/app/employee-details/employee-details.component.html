@@ -1,0 +1,30 @@
+<p-panel class="employee-app-body__center employee-details" *ngIf="employee$">
+  <ng-template pTemplate="header">
+    <p-button icon="pi pi-arrow-left" routerLink="/employee" [outlined]="true"/>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-pencil ml-2" routerLink="/employee/edit/{{employee$.id}}" [outlined]="true" severity="warning"/>
+    <p-button icon="pi pi-trash" (click)="deleteDialog(employee$)" [outlined]="true" severity="danger"/>
+  </ng-template>
+  <div class="employee-details-content">
+    <fieldset>
+      <legend>Name</legend>
+      <p>{{ employee$.firstName + " " + employee$.lastName }}</p>
+    </fieldset>
+    <fieldset>
+      <legend>Adresse</legend>
+      <p>{{ employee$.street }}</p>
+      <p>{{ employee$.postcode + " " + employee$.city }}</p>
+    </fieldset>
+    <fieldset>
+      <legend>Telefonnummer</legend>
+      <p>{{ employee$.phone }}</p>
+    </fieldset>
+    <fieldset *ngIf="employee$.skillSet?.length">
+      <legend>Qualifikationen</legend>
+      <p *ngFor="let qualification of employee$.skillSet">{{ qualification.skill }}</p>
+    </fieldset>
+  </div>
+
+</p-panel>
+<p-confirmDialog [closable]="false"></p-confirmDialog>

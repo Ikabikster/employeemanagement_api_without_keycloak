@@ -1,0 +1,94 @@
+@import "primeicons/primeicons.css";
+
+.employee-app-body__center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.employee-list {
+  .p-panel .p-panel-header {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
+
+  .employee-list__table {
+    border: none;
+
+    td:last-of-type, th:last-of-type {
+      padding: 0;
+    }
+  }
+}
+
+.employee-details {
+  .p-panel {
+
+    .p-panel-content {
+      padding: 2em
+    }
+
+    .p-panel-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .p-panel-header, .p-panel-footer {
+      padding: 0.7em;
+    }
+  }
+
+  .employee-details-content {
+
+    fieldset {
+      border: none;
+      padding: 0 1em;
+
+      &:not(:last-of-type) {
+        margin: 0 0 1em;
+      }
+
+      legend {
+        font-weight: 150;
+        font-size: 0.9em;
+        transform: translate(-1em);
+      }
+
+      p, ul {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+
+        &:last-of-type {
+          margin-bottom: 0.6em
+        }
+      }
+    }
+  }
+}
+
+.employee-add-or-edit {
+  .p-panel .p-panel-content {
+    span, div {
+      margin: 0.8em 0 0.8em;
+
+      input {
+        width: 100%
+      }
+
+      &.employee-add-or-edit-input__city, &.employee-add-or-edit-input__name {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .p-panel .p-panel-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+button.p-button.p-button__gapped-icon {
+  gap: 0.5em;
+}
