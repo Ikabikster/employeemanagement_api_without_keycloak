@@ -3,7 +3,8 @@
     <p-button icon="pi pi-arrow-left" routerLink="/employee" [outlined]="true"/>
   </ng-template>
   <ng-template pTemplate="footer">
-    <p-button icon="pi pi-pencil" routerLink="/employee/edit/{{employee$.id}}" [outlined]="true" severity="warning"/>
+    <p-button icon="pi pi-pencil ml-2" routerLink="/employee/edit/{{employee$.id}}" [outlined]="true" severity="warning"/>
+    <p-button icon="pi pi-trash" (click)="deleteDialog(employee$)" [outlined]="true" severity="danger"/>
   </ng-template>
   <div class="employee-details-content">
     <fieldset>
@@ -26,3 +27,4 @@
   </div>
 
 </p-panel>
+<p-confirmDialog></p-confirmDialog>
