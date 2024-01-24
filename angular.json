@@ -39,8 +39,7 @@
               "src/styles.scss"
 
             ],
-            "scripts": [],
-            "browserTarget": "your-project-name:build"
+            "scripts": []
           },
           "configurations": {
             "production": {
