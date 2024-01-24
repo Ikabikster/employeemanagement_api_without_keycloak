@@ -13,14 +13,14 @@ export class ToastService {
     this.messageService.add({
       severity: "success",
       summary: "Erfolg",
-      detail: 'Mitarbeiter/in erfolgreich ${action}'
+      detail: `Mitarbeiter/in erfolgreich ${action}`
     })
   }
 
   addErrorMessageForAction(action:string, errorMessage: string){
     this.messageService.add({
-      severity: "error",
-      summary: 'Fehler beim ${action}',
+      severity: 'error',
+      summary: `Fehler beim ${action}`,
       detail: errorMessage
     })
   }
