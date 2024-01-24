@@ -13,14 +13,14 @@ export abstract class EmployeeAddOrEditComponent {
   protected actionType: string = "";
   protected doneActionType: string = "";
   protected employeeForm: FormGroup = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    street: new FormControl(''),
-    postcode: new FormControl('', [Validators.minLength(5), Validators.maxLength(5)]),
-    city: new FormControl(''),
-    phone: new FormControl(''),
-    skillSet: new FormControl([])
-  })
+   firstName: new FormControl('', Validators.required),
+   lastName: new FormControl('', Validators.required),
+   street: new FormControl(''),
+   postcode: new FormControl('', [Validators.minLength(5), Validators.maxLength(5), Validators.required]),
+   city: new FormControl(''),
+   phone: new FormControl(''),
+   skillSet: new FormControl([])
+  });
   protected employeeService: EmployeeService;
   protected toastService: ToastService;
   protected router: Router;

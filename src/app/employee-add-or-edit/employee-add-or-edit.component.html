@@ -32,7 +32,7 @@
   </span>
   <ng-template pTemplate="footer">
     <p-button label="Abbrechen"  routerLink="/employee" [outlined]="true" severity="warning"/>
-    <p-button label="Speichern" (click)="submitForm()" [outlined]="true" severity="info"/>
+    <p-button label="Speichern" [disabled]="!employeeForm.valid" (click)="submitForm()" [outlined]="true" severity="info"/>
   </ng-template>
 </p-panel>
 
