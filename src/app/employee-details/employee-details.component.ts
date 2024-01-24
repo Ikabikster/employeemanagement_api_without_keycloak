@@ -38,9 +38,11 @@ export class EmployeeDetailsComponent {
     this.confirmationService.confirm({
       message: "Möchten Sie den Eintrag wirklich löschen?",
       header: employee.firstName + " " + employee.lastName,
+      icon:"none",
       rejectLabel: "Ja",
       rejectButtonStyleClass: "p-button-info p-button-outlined",
       rejectIcon: "pi pi-check",
+      closeOnEscape: false,
       reject: () => {
         this.employeeService.deleteEmployee(employee.id!).subscribe({
           next: () => {

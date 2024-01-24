@@ -29,7 +29,7 @@ export class EmployeeListComponent {
       message: "Möchten Sie den Eintrag wirklich löschen?",
       header: employee.firstName + " " + employee.lastName,
       rejectLabel: "Ja",
-      rejectButtonStyleClass: "p-button-info p-button-outlined",
+      rejectButtonStyleClass: "p-button-info p-button-outlined p-button__gapped-icon",
       rejectIcon: "pi pi-check",
       reject: () => {
         this.employeeService.deleteEmployee(employee.id!).subscribe({
@@ -43,7 +43,7 @@ export class EmployeeListComponent {
         })
         ;
       },
-      acceptButtonStyleClass: "p-button-warning p-button-outlined",
+      acceptButtonStyleClass: "p-button-warning p-button-outlined p-button__gapped-icon",
       acceptLabel: "Nein",
       acceptIcon: "pi pi-times"
     })
